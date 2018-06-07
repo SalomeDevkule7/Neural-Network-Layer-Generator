@@ -1,0 +1,1511 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.0911;
+1.0911
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "network_4_8_12_16_10_16";
+network_4_8_12_16_10_16
+set SRC_FILE "network_4_8_12_16_10_16.sv";
+network_4_8_12_16_10_16.sv
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./network_4_8_12_16_10_16.sv
+Compiling source file ./network_4_8_12_16_10_16.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'network_4_8_12_16_10_16'.
+Information: Building the design 'layer1_8_4_2_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mvm_controlpath_layer1_8_4_2_16'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:349: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:390: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:406: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:398: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:398: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:424: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 313 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           329            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 418 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           421            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine mvm_controlpath_layer1_8_4_2_16 line 313 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   next_state_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     s_ready_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_W_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_B_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     wr_en_x_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      en_r_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_X_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    accum_src_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     cntr_x_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sel_out_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mvm_datapath_layer1_8_4_2_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mvm_controlpath_layer2_12_8_4_16'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:783: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:824: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:840: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:832: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:832: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:858: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 747 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           763            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 852 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           855            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine mvm_controlpath_layer2_12_8_4_16 line 747 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   next_state_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     s_ready_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_W_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_B_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     wr_en_x_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      en_r_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_X_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    accum_src_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     cntr_x_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sel_out_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mvm_datapath_layer2_12_8_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mvm_controlpath_layer3_16_12_4_16'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1317: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1358: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1374: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1366: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1366: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1392: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 1281 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1297           |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 1386 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1389           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine mvm_controlpath_layer3_16_12_4_16 line 1281 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   next_state_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     s_ready_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_W_reg      | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_B_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     wr_en_x_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      en_r_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_X_reg      | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    accum_src_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     m_valid_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     cntr_x_reg      | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sel_out_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mvm_datapath_layer3_16_12_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_W_rom0'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:162: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:163: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:164: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:170: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:172: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:176: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 160 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           161            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_W_rom0 line 160 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_B_rom0'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:215: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:216: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:217: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 212 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           213            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_B_rom0 line 212 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mac'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_W_rom1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:189: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:190: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:192: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:193: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:194: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:197: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:199: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:200: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:201: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:203: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 186 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           187            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_W_rom1 line 186 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_8_4_2_16_B_rom1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:228: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:231: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 226 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           227            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_8_4_2_16_B_rom1 line 226 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux1layer1_8_4_2_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'mvm_datapath_layer1_8_4_2_16' with
+	the parameters "16,4,2". (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:55: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:57: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE4_LOGSIZE2 line 54 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH16_SIZE4_LOGSIZE2/55 |   4    |   16    |      2       | N  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W_rom0'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:462: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:463: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:465: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:466: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:467: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:468: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:472: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:473: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:476: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:479: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:481: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:483: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:484: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:485: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 460 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           461            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W_rom0 line 460 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B_rom0'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:599: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:600: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 596 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           597            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B_rom0 line 596 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W_rom1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:496: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:498: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:501: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:503: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:504: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:510: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:511: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:513: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:519: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 494 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           495            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W_rom1 line 494 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B_rom1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:611: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:612: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:613: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 609 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           610            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B_rom1 line 609 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W_rom2'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:530: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:531: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:532: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:533: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:534: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:535: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:539: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:540: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:541: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:542: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:543: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:544: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:547: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:549: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:550: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:552: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 528 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           529            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W_rom2 line 528 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B_rom2'. (HDL-193)
+
+Statistics for case statements in always block at line 622 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           623            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B_rom2 line 622 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_W_rom3'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:564: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:565: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:566: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:572: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:575: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:576: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:578: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:579: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:580: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:582: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:585: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:586: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:587: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 562 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           563            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_W_rom3 line 562 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_12_8_4_16_B_rom3'. (HDL-193)
+
+Statistics for case statements in always block at line 635 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           636            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_12_8_4_16_B_rom3 line 635 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux1layer2_12_8_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'mvm_datapath_layer2_12_8_4_16' with
+	the parameters "16,8,3". (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:55: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:57: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE8_LOGSIZE3 line 54 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================================
+|         block name/line          | Inputs | Outputs | # sel inputs | MB |
+===========================================================================
+| memory_WIDTH16_SIZE8_LOGSIZE3/55 |   8    |   16    |      3       | N  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W_rom0'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:896: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:897: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:898: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:899: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:900: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:902: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:907: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:908: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:909: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:910: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:912: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:914: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:915: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:918: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:919: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:920: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:922: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:923: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:925: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:928: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:929: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:930: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:936: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:937: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:938: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 894 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           895            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W_rom0 line 894 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B_rom0'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1128: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1129: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1126 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1127           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B_rom0 line 1126 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W_rom1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:957: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:959: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:960: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:962: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:963: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:964: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:965: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:967: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:968: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:978: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:980: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:981: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:987: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:988: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:989: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:990: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:991: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:993: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:996: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:999: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 952 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           953            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W_rom1 line 952 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B_rom1'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1143: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1144: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1140 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1141           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B_rom1 line 1140 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W_rom2'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1012: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1013: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1014: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1015: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1020: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1024: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1025: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1026: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1028: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1029: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1032: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1035: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1036: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1039: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1042: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1044: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1046: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1049: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1050: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1051: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1052: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1053: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1055: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1057: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1058: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1059: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1010 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1011           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W_rom2 line 1010 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B_rom2'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1157: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1158: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1159: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1154 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1155           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B_rom2 line 1154 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_W_rom3'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1071: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1072: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1073: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1075: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1076: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1077: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1079: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1088: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1089: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1091: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1092: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1096: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1097: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1098: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1101: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1102: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1103: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1105: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1107: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1109: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1110: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1111: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1113: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1114: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1115: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1117: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1068 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1069           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_W_rom3 line 1068 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_16_12_4_16_B_rom3'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:1172: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:1173: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1168 in file
+	'./network_4_8_12_16_10_16.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1169           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_16_12_4_16_B_rom3 line 1168 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux1layer3_16_12_4_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'memory' instantiated from design 'mvm_datapath_layer3_16_12_4_16' with
+	the parameters "16,12,4". (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:55: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./network_4_8_12_16_10_16.sv:57: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine memory_WIDTH16_SIZE12_LOGSIZE4 line 54 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mult'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ff'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ff line 30 in file
+		'./network_4_8_12_16_10_16.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       out_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'adder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux'. (HDL-193)
+Warning:  ./network_4_8_12_16_10_16.sv:78: unsigned to signed assignment occurs. (VER-318)
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset s_valid m_ready data_in[15] data_in[14] data_in[13] data_in[12] data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{s_valid m_ready data_in[15] data_in[14] data_in[13] data_in[12] data_in[11] data_in[10] data_in[9] data_in[8] data_in[7] data_in[6] data_in[5] data_in[4] data_in[3] data_in[2] data_in[1] data_in[0]}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+# set delay for inputs to be 0.2ns
+set_input_delay 0.2 -max -clock clk $INPUTS
+1
+set_output_delay 0.2 -max -clock clk [all_outputs]
+1
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+
+Information: There are 19 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'memory_WIDTH16_SIZE12_LOGSIZE4'
+  Processing 'mux1layer3_16_12_4_16'
+  Processing 'ff_0'
+  Processing 'mux_0'
+  Processing 'adder_0'
+  Processing 'mult_0'
+  Processing 'mac_0'
+  Processing 'layer3_16_12_4_16_B_rom3'
+  Processing 'layer3_16_12_4_16_W_rom3'
+  Processing 'layer3_16_12_4_16_B_rom2'
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer3_16_12_4_16_W_rom2'
+  Processing 'layer3_16_12_4_16_B_rom1'
+Information: The register 'z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer3_16_12_4_16_W_rom1'
+  Processing 'layer3_16_12_4_16_B_rom0'
+Information: The register 'z_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer3_16_12_4_16_W_rom0'
+  Processing 'mvm_datapath_layer3_16_12_4_16'
+  Processing 'mvm_controlpath_layer3_16_12_4_16'
+Information: The register 'en_r_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'next_state_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer3_16_12_4_16'
+  Processing 'memory_WIDTH16_SIZE8_LOGSIZE3'
+  Processing 'mux1layer2_12_8_4_16'
+  Processing 'layer2_12_8_4_16_B_rom3'
+Information: The register 'z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[5]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W_rom3'
+  Processing 'layer2_12_8_4_16_B_rom2'
+Information: The register 'z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[4]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W_rom2'
+  Processing 'layer2_12_8_4_16_B_rom1'
+Information: The register 'z_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[7]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W_rom1'
+  Processing 'layer2_12_8_4_16_B_rom0'
+Information: The register 'z_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'z_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16_W_rom0'
+  Processing 'mvm_datapath_layer2_12_8_4_16'
+  Processing 'mvm_controlpath_layer2_12_8_4_16'
+Information: The register 'en_r_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'next_state_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer2_12_8_4_16'
+  Processing 'memory_WIDTH16_SIZE4_LOGSIZE2'
+  Processing 'mux1layer1_8_4_2_16'
+  Processing 'layer1_8_4_2_16_B_rom1'
+Information: The register 'z_reg[5]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer1_8_4_2_16_W_rom1'
+  Processing 'layer1_8_4_2_16_B_rom0'
+  Processing 'layer1_8_4_2_16_W_rom0'
+  Processing 'mvm_datapath_layer1_8_4_2_16'
+  Processing 'mvm_controlpath_layer1_8_4_2_16'
+Information: The register 'cntr_x_reg[3]' will be removed. (OPT-1207)
+Information: The register 'en_r_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'next_state_reg[3]' is a constant and will be removed. (OPT-1206)
+  Processing 'layer1_8_4_2_16'
+  Processing 'network_4_8_12_16_10_16'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'adder_1_DW01_add_0'
+  Processing 'adder_2_DW01_add_0'
+  Processing 'adder_3_DW01_add_0'
+  Processing 'adder_4_DW01_add_0'
+  Mapping 'mvm_controlpath_layer3_16_12_4_16_DW_cmp_0'
+  Processing 'mvm_controlpath_layer3_16_12_4_16_DW01_inc_0'
+  Processing 'mvm_controlpath_layer3_16_12_4_16_DW01_inc_1'
+  Mapping 'mvm_controlpath_layer3_16_12_4_16_DW_cmp_1'
+  Processing 'mvm_controlpath_layer3_16_12_4_16_DW01_inc_2'
+  Processing 'adder_5_DW01_add_0'
+  Processing 'adder_6_DW01_add_0'
+  Processing 'adder_7_DW01_add_0'
+  Processing 'adder_8_DW01_add_0'
+  Mapping 'mvm_controlpath_layer2_12_8_4_16_DW_cmp_0'
+  Processing 'mvm_controlpath_layer2_12_8_4_16_DW01_inc_0'
+  Processing 'mvm_controlpath_layer2_12_8_4_16_DW01_inc_1'
+  Processing 'adder_9_DW01_add_0'
+  Processing 'adder_0_DW01_add_0'
+  Processing 'mvm_controlpath_layer1_8_4_2_16_DW01_inc_0'
+  Mapping 'mult_1_DW_mult_tc_0'
+  Mapping 'mult_2_DW_mult_tc_0'
+  Mapping 'mult_3_DW_mult_tc_0'
+  Mapping 'mult_4_DW_mult_tc_0'
+  Mapping 'mult_5_DW_mult_tc_0'
+  Mapping 'mult_6_DW_mult_tc_0'
+  Mapping 'mult_7_DW_mult_tc_0'
+  Mapping 'mult_8_DW_mult_tc_0'
+  Mapping 'mult_9_DW_mult_tc_0'
+  Mapping 'mult_0_DW_mult_tc_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'mvm_controlpath_layer3_16_12_4_16'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mvm_controlpath_layer2_12_8_4_16'. (DDB-72)
+Information: The register 'mod2/cp/cntr_x_reg[4]' will be removed. (OPT-1207)
+Information: The register 'mod3/cp/cntr_x_reg[5]' will be removed. (OPT-1207)
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:08   21343.3      1.18     106.7    2454.5                          
+    0:00:08   21343.3      1.18     106.7    2454.5                          
+    0:00:13   19166.1      0.19      16.6      40.7                          
+    0:00:13   19165.0      0.19      16.6      40.7                          
+    0:00:13   19165.0      0.19      16.6      40.7                          
+    0:00:13   19164.0      0.19      16.6      40.7                          
+    0:00:13   19164.0      0.19      16.6      40.7                          
+    0:00:15   15594.5      0.22       8.5       0.0                          
+    0:00:15   15604.9      0.19       7.9       0.0                          
+    0:00:16   15614.5      0.20       7.7       0.0                          
+    0:00:16   15624.8      0.17       7.2       0.0                          
+    0:00:16   15638.7      0.17       6.7       0.0                          
+    0:00:16   15649.6      0.15       6.4       0.0                          
+    0:00:16   15665.3      0.15       6.4       0.0                          
+    0:00:16   15675.9      0.17       6.3       0.0                          
+    0:00:17   15688.1      0.14       5.8       0.0                          
+    0:00:17   15704.6      0.14       5.5       0.0                          
+    0:00:17   15717.4      0.13       5.4       0.0                          
+    0:00:17   15728.0      0.13       5.4       0.0                          
+    0:00:17   15739.5      0.12       5.1       0.0                          
+    0:00:17   15751.2      0.12       5.0       0.0                          
+    0:00:17   15761.0      0.11       4.7       0.0                          
+    0:00:17   15774.9      0.11       4.5       0.0                          
+    0:00:17   15784.7      0.11       4.4       0.0                          
+    0:00:17   15784.7      0.11       4.4       0.0                          
+    0:00:18   15784.7      0.11       4.4       0.0                          
+    0:00:18   15784.7      0.11       4.4       0.0                          
+    0:00:18   15784.7      0.11       4.4       0.0                          
+    0:00:18   15784.7      0.11       4.4       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:18   15784.7      0.11       4.4       0.0                          
+    0:00:18   15789.0      0.10       4.3       0.0 mod3/datapath/mac2/pipe/out_reg[14]/D
+    0:00:18   15799.6      0.10       4.2       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:18   15809.4      0.09       4.0       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:18   15814.2      0.09       3.9       0.0 mod2/datapath/mac1/pipe/out_reg[14]/D
+    0:00:18   15818.2      0.09       3.9       0.0 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:18   15876.5      0.09       3.7     145.3 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:18   15882.9      0.09       3.6     145.3 mod1/datapath/mac0/pipe/out_reg[14]/D
+    0:00:18   15888.2      0.08       3.5     145.3 mod3/datapath/mac1/pipe/out_reg[14]/D
+    0:00:18   15888.2      0.08       3.5     145.3 mod2/datapath/mac2/f1/out_reg[15]/D
+    0:00:18   15891.6      0.08       3.5     145.3 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:18   15899.6      0.08       3.4     145.3 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:18   15906.0      0.08       3.3     145.3 mod2/datapath/mac1/f1/out_reg[15]/D
+    0:00:18   15908.1      0.08       3.3     145.3 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:19   15916.4      0.08       3.2     145.3 mod2/datapath/mac1/f1/out_reg[15]/D
+    0:00:19   15920.1      0.08       3.2     145.3 mod1/datapath/mac0/f1/out_reg[15]/D
+    0:00:19   15925.2      0.08       3.1     145.3 mod2/datapath/mac0/f1/out_reg[15]/D
+    0:00:19   15930.2      0.08       3.1     145.3 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:19   15936.3      0.08       3.0     145.3 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:19   15940.6      0.07       3.0     145.3 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:19   15942.2      0.07       2.9     145.3 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:19   15945.4      0.07       2.8     145.3 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:19   15957.3      0.07       2.7     145.3 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:19   15962.7      0.07       2.7     145.3 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:19   15969.0      0.07       2.7     145.3 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:19   15973.8      0.07       2.6     145.3 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:19   15980.7      0.07       2.6     145.3 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:19   15992.7      0.07       2.5     145.3 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:19   16000.2      0.06       2.4     145.3 mod1/datapath/mac0/f1/out_reg[15]/D
+    0:00:19   16006.8      0.06       2.4     145.3 mod2/datapath/mac2/f1/out_reg[15]/D
+    0:00:20   16017.7      0.06       2.3     145.3 mod1/datapath/mac1/f1/out_reg[15]/D
+    0:00:20   16019.6      0.06       2.3     145.3 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:20   16031.6      0.06       2.3     145.3 mod2/datapath/mac3/f1/out_reg[15]/D
+    0:00:20   16039.8      0.06       2.2     145.3 mod1/datapath/mac1/f1/out_reg[15]/D
+    0:00:20   16051.2      0.06       2.1     145.3 mod3/datapath/mac0/f1/out_reg[15]/D
+    0:00:20   16051.2      0.06       2.1     145.3 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:20   16052.8      0.06       2.0     145.3 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:20   16057.1      0.06       2.0     145.3 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:20   16070.4      0.06       2.0     169.5 mod2/datapath/mac2/pipe/out_reg[14]/D
+    0:00:20   16074.4      0.06       1.9     169.5 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:20   16078.1      0.05       1.9     169.5 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:20   16079.7      0.05       1.9     169.5 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:20   16088.2      0.05       1.8     169.5 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:20   16088.5      0.05       1.8     169.5 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:21   16090.9      0.05       1.8     169.5 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:21   16095.7      0.05       1.8     169.5 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:21   16099.9      0.05       1.7     169.5 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:21   16104.2      0.05       1.7     169.5 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:21   16110.6      0.05       1.6     169.5 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:21   16109.2      0.05       1.5     169.5 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:21   16118.5      0.05       1.5     169.5 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:21   16118.8      0.05       1.5     169.5 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:21   16118.5      0.05       1.5     169.5 mod3/datapath/mac2/pipe/out_reg[15]/D
+    0:00:21   16123.9      0.05       1.4     169.5 mod3/datapath/mac3/f1/out_reg[15]/D
+    0:00:21   16132.6      0.05       1.4     193.7 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:21   16132.6      0.04       1.4     193.7 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:21   16136.1      0.04       1.4     193.7 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:21   16139.5      0.04       1.4     193.7 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:21   16141.1      0.04       1.4     193.7 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:22   16142.5      0.04       1.4     193.7 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:22   16143.8      0.04       1.4     193.7 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:22   16147.0      0.04       1.3     193.7 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:22   16150.5      0.04       1.3     193.7 mod2/datapath/mac1/f1/out_reg[15]/D
+    0:00:22   16154.2      0.04       1.3     193.7 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:22   16155.0      0.04       1.3     193.7 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:22   16157.6      0.04       1.2     193.7 mod3/datapath/mac0/pipe/out_reg[14]/D
+    0:00:22   16161.6      0.04       1.2     193.7 mod3/datapath/mac2/pipe/out_reg[14]/D
+    0:00:22   16163.8      0.04       1.2     193.7 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:22   16168.5      0.04       1.2     193.7 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:22   16175.7      0.04       1.1     193.7 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:22   16175.5      0.04       1.1     193.7 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:22   16184.0      0.03       1.1     193.7 mod3/datapath/mac2/pipe/out_reg[15]/D
+    0:00:22   16188.0      0.03       1.1     193.7 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:22   16192.0      0.03       0.9     193.7 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:23   16198.3      0.03       0.8     193.7 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:23   16199.7      0.03       0.8     193.7 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:23   16202.9      0.03       0.8     193.7 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:23   16202.3      0.03       0.8     193.7 mod2/datapath/mac0/pipe/out_reg[14]/D
+    0:00:23   16208.4      0.03       0.8     193.7 mod3/datapath/mac0/f1/out_reg[15]/D
+    0:00:23   16211.6      0.03       0.8     193.7 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:23   16216.2      0.03       0.8     193.7 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:23   16214.3      0.03       0.7     193.7 mod3/datapath/mac2/pipe/out_reg[14]/D
+    0:00:23   16219.3      0.03       0.7     193.7 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:23   16227.3      0.03       0.7     193.7 mod2/datapath/mac2/pipe/out_reg[14]/D
+    0:00:23   16230.8      0.03       0.7     193.7 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:23   16235.8      0.02       0.6     193.7 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:23   16235.3      0.02       0.6     193.7 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:23   16237.2      0.02       0.6     193.7 mod3/datapath/mac2/pipe/out_reg[14]/D
+    0:00:23   16241.2      0.02       0.6     193.7 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:23   16249.7      0.02       0.6     218.0 mod2/datapath/mac2/f1/out_reg[15]/D
+    0:00:23   16250.2      0.02       0.6     218.0 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:24   16252.1      0.02       0.5     218.0 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:24   16256.1      0.02       0.5     218.0 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:24   16257.9      0.02       0.5     218.0 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:24   16258.7      0.02       0.5     218.0 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:24   16256.3      0.02       0.5     218.0                          
+    0:00:25   16234.8      0.02       0.5     218.0                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:25   16234.8      0.02       0.5     218.0                          
+    0:00:25   16160.0      0.02       0.5       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:25   16163.2      0.02       0.5       0.0 mod3/datapath/mac0/f1/out_reg[15]/D
+    0:00:25   16164.3      0.02       0.5       0.0 mod3/datapath/mac1/pipe/out_reg[14]/D
+    0:00:25   16165.6      0.02       0.5       0.0 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:25   16168.5      0.02       0.5       0.0 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:25   16176.3      0.02       0.5       0.0 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:25   16178.7      0.02       0.5       0.0 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:25   16184.2      0.02       0.4       0.0 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:25   16189.3      0.02       0.4       0.0 mod2/datapath/mac0/pipe/out_reg[14]/D
+    0:00:25   16190.4      0.02       0.4       0.0 mod3/datapath/mac2/pipe/out_reg[15]/D
+    0:00:25   16193.0      0.02       0.4       0.0 mod2/datapath/mac0/f1/out_reg[15]/D
+    0:00:25   16195.4      0.02       0.4       0.0 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:26   16198.6      0.02       0.4       0.0 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:26   16203.7      0.02       0.4       0.0 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:26   16206.6      0.02       0.4       0.0 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:26   16210.0      0.02       0.4       0.0 mod2/datapath/mac3/f1/out_reg[15]/D
+    0:00:26   16211.6      0.02       0.4       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:26   16214.0      0.02       0.4       0.0 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:26   16215.6      0.01       0.3       0.0 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:26   16218.0      0.01       0.3       0.0 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:26   16222.3      0.01       0.3       0.0 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:26   16224.1      0.01       0.3       0.0 mod3/datapath/mac3/f1/out_reg[15]/D
+    0:00:26   16226.3      0.01       0.3       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:26   16229.2      0.01       0.3       0.0 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:26   16233.2      0.01       0.3       0.0 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:26   16236.6      0.01       0.3       0.0 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:27   16248.1      0.01       0.2      24.2 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:27   16248.6      0.01       0.2      24.2 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:27   16249.1      0.01       0.2      24.2 mod3/datapath/mac0/f1/out_reg[15]/D
+    0:00:27   16252.3      0.01       0.2      24.2 mod2/datapath/mac1/f1/out_reg[15]/D
+    0:00:27   16256.9      0.01       0.2      24.2 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:27   16264.6      0.01       0.2      24.2 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:27   16269.1      0.01       0.2      24.2 mod1/datapath/mac0/pipe/out_reg[15]/D
+    0:00:27   16271.0      0.01       0.2      24.2 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:27   16272.0      0.01       0.2      24.2 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:27   16274.4      0.01       0.2      24.2 mod1/datapath/mac1/f1/out_reg[15]/D
+    0:00:27   16282.9      0.01       0.2      24.2 mod2/datapath/mac0/f1/out_reg[15]/D
+    0:00:27   16285.3      0.01       0.1      24.2 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:27   16288.8      0.01       0.1      24.2 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:27   16292.0      0.01       0.1      24.2 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:27   16296.2      0.01       0.1      24.2 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:27   16297.3      0.01       0.1      24.2 mod2/datapath/mac2/f1/out_reg[15]/D
+    0:00:28   16299.4      0.01       0.1      24.2 mod1/datapath/mac0/f1/out_reg[15]/D
+    0:00:28   16299.7      0.01       0.1      24.2 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:28   16300.5      0.01       0.1      24.2 mod3/datapath/mac1/pipe/out_reg[15]/D
+    0:00:28   16304.7      0.01       0.1      24.2 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:28   16309.3      0.01       0.1      24.2 mod2/datapath/mac1/pipe/out_reg[15]/D
+    0:00:28   16301.0      0.01       0.1       0.0 mod2/datapath/mac3/a1/add_43/n1
+    0:00:28   16301.0      0.01       0.1       0.0 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:28   16303.1      0.01       0.1       0.0 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:28   16305.0      0.01       0.1       0.0 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:28   16308.7      0.00       0.1       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:28   16310.1      0.00       0.1       0.0 mod2/datapath/mac3/pipe/out_reg[15]/D
+    0:00:28   16314.3      0.00       0.1       0.0 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:28   16314.8      0.00       0.1       0.0 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:28   16315.9      0.00       0.0       0.0 mod3/datapath/mac2/pipe/out_reg[15]/D
+    0:00:29   16315.9      0.00       0.0       0.0 mod2/datapath/mac2/pipe/out_reg[15]/D
+    0:00:29   16317.5      0.00       0.0       0.0 mod3/datapath/mac1/f1/out_reg[15]/D
+    0:00:29   16319.9      0.00       0.0       0.0 mod1/datapath/mac1/pipe/out_reg[15]/D
+    0:00:29   16319.9      0.00       0.0       0.0 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:29   16319.4      0.00       0.0       0.0                          
+    0:00:29   16321.2      0.00       0.0       0.0                          
+    0:00:29   16321.2      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:29   16321.2      0.00       0.0       0.0                          
+    0:00:29   16321.2      0.00       0.0       0.0                          
+    0:00:29   16228.9      0.02       0.1       0.0                          
+    0:00:30   16215.9      0.02       0.1       0.0                          
+    0:00:30   16211.6      0.02       0.1       0.0                          
+    0:00:30   16210.0      0.02       0.1       0.0                          
+    0:00:30   16208.4      0.02       0.1       0.0                          
+    0:00:30   16208.4      0.02       0.1       0.0                          
+    0:00:30   16219.1      0.00       0.0       0.0 mod3/datapath/mac0/pipe/out_reg[15]/D
+    0:00:30   16235.8      0.00       0.0       0.0                          
+    0:00:30   16235.8      0.00       0.0       0.0                          
+    0:00:30   16235.8      0.00       0.0       0.0                          
+    0:00:30   16235.8      0.00       0.0       0.0                          
+    0:00:30   16236.9      0.00       0.0       0.0                          
+    0:00:30   16237.4      0.00       0.0       0.0                          
+    0:00:30   16236.9      0.00       0.0       0.0                          
+    0:00:30   16238.0      0.00       0.0       0.0                          
+    0:00:30   16240.9      0.00       0.0       0.0                          
+    0:00:30   16243.6      0.00       0.0       0.0                          
+    0:00:30   16202.9      0.01       0.0       0.0                          
+    0:00:31   16201.5      0.01       0.0       0.0                          
+    0:00:31   16201.5      0.01       0.0       0.0                          
+    0:00:31   16201.5      0.01       0.0       0.0                          
+    0:00:31   16201.5      0.01       0.0       0.0                          
+    0:00:31   16201.5      0.01       0.0       0.0                          
+    0:00:31   16201.5      0.01       0.0       0.0                          
+    0:00:31   16204.2      0.00       0.0       0.0                          
+    0:00:31   16177.6      0.00       0.0       0.0                          
+    0:00:31   16142.5      0.00       0.0       0.0                          
+    0:00:31   16131.0      0.00       0.0       0.0                          
+    0:00:32   16111.1      0.00       0.0       0.0                          
+    0:00:32   16103.6      0.00       0.0       0.0                          
+    0:00:32   16097.5      0.00       0.0       0.0                          
+    0:00:32   16090.9      0.00       0.0       0.0                          
+    0:00:32   16080.0      0.00       0.0       0.0                          
+    0:00:32   16077.0      0.00       0.0       0.0                          
+    0:00:32   16077.0      0.00       0.0       0.0                          
+    0:00:32   16071.2      0.01       0.0       0.0                          
+    0:00:32   16071.2      0.01       0.0       0.0                          
+    0:00:32   16071.2      0.01       0.0       0.0                          
+    0:00:32   16071.2      0.01       0.0       0.0                          
+    0:00:32   16071.2      0.01       0.0       0.0                          
+    0:00:32   16071.2      0.01       0.0       0.0                          
+    0:00:32   16077.0      0.00       0.0       0.0 mod3/datapath/mac3/pipe/out_reg[15]/D
+    0:00:33   16080.0      0.00       0.0       0.0 mod2/datapath/mac0/pipe/out_reg[15]/D
+    0:00:33   16080.0      0.00       0.0       0.0 mod3/datapath/mac3/f1/out_reg[15]/D
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'network_4_8_12_16_10_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'mod1/datapath/mac0/f1/clk': 1106 load(s), 1 driver(s)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : network_4_8_12_16_10_16
+Version: J-2014.09-SP5-2
+Date   : Fri Dec  9 20:28:51 2016
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'network_4_8_12_16_10_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           38
+Number of nets:                            74
+Number of cells:                            3
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       3
+
+Combinational area:              11069.058019
+Buf/Inv area:                     1229.186004
+Noncombinational area:            5010.907820
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 16079.965838
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : network_4_8_12_16_10_16
+Version: J-2014.09-SP5-2
+Date   : Fri Dec  9 20:28:53 2016
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+network_4_8_12_16_10_16
+                       5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  =   7.1606 mW   (87%)
+  Net Switching Power  =   1.0980 mW   (13%)
+                         ---------
+Total Dynamic Power    =   8.2586 mW  (100%)
+
+Cell Leakage Power     = 344.4197 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       6.2374e+03          174.7606        8.6473e+04        6.4986e+03  (  75.54%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational    923.2194          923.2244        2.5795e+05        2.1044e+03  (  24.46%)
+--------------------------------------------------------------------------------------------------
+Total          7.1606e+03 uW     1.0980e+03 uW     3.4442e+05 nW     8.6030e+03 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : network_4_8_12_16_10_16
+Version: J-2014.09-SP5-2
+Date   : Fri Dec  9 20:28:53 2016
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: mod3/datapath/mac2/pipe/out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mod3/datapath/mac2/f1/out_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  network_4_8_12_16_10_16
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  mod3/datapath/mac2/pipe/out_reg[1]/CK (DFF_X1)          0.00 #     0.00 r
+  mod3/datapath/mac2/pipe/out_reg[1]/QN (DFF_X1)          0.06       0.06 r
+  mod3/datapath/mac2/pipe/U3/ZN (INV_X1)                  0.02       0.09 f
+  mod3/datapath/mac2/pipe/out[1] (ff_4)                   0.00       0.09 f
+  mod3/datapath/mac2/a1/in2[1] (adder_2)                  0.00       0.09 f
+  mod3/datapath/mac2/a1/add_43/B[1] (adder_2_DW01_add_1)
+                                                          0.00       0.09 f
+  mod3/datapath/mac2/a1/add_43/U109/ZN (OR2_X2)           0.06       0.15 f
+  mod3/datapath/mac2/a1/add_43/U116/ZN (AOI21_X1)         0.04       0.19 r
+  mod3/datapath/mac2/a1/add_43/U175/ZN (OAI21_X1)         0.03       0.22 f
+  mod3/datapath/mac2/a1/add_43/U129/ZN (AOI21_X1)         0.04       0.26 r
+  mod3/datapath/mac2/a1/add_43/U171/ZN (OAI21_X1)         0.03       0.30 f
+  mod3/datapath/mac2/a1/add_43/U113/ZN (AOI21_X1)         0.04       0.34 r
+  mod3/datapath/mac2/a1/add_43/U165/ZN (OAI21_X1)         0.03       0.37 f
+  mod3/datapath/mac2/a1/add_43/U111/ZN (AOI21_X1)         0.04       0.41 r
+  mod3/datapath/mac2/a1/add_43/U166/ZN (OAI21_X1)         0.03       0.45 f
+  mod3/datapath/mac2/a1/add_43/U115/ZN (AOI21_X1)         0.04       0.49 r
+  mod3/datapath/mac2/a1/add_43/U169/ZN (OAI21_X1)         0.04       0.52 f
+  mod3/datapath/mac2/a1/add_43/U104/ZN (NAND2_X1)         0.04       0.56 r
+  mod3/datapath/mac2/a1/add_43/U89/ZN (NAND3_X1)          0.04       0.60 f
+  mod3/datapath/mac2/a1/add_43/U97/ZN (NAND2_X1)          0.03       0.63 r
+  mod3/datapath/mac2/a1/add_43/U100/ZN (NAND3_X1)         0.03       0.67 f
+  mod3/datapath/mac2/a1/add_43/U4/CO (FA_X1)              0.09       0.76 f
+  mod3/datapath/mac2/a1/add_43/U3/CO (FA_X1)              0.09       0.85 f
+  mod3/datapath/mac2/a1/add_43/U94/ZN (XNOR2_X1)          0.05       0.90 f
+  mod3/datapath/mac2/a1/add_43/SUM[15] (adder_2_DW01_add_1)
+                                                          0.00       0.90 f
+  mod3/datapath/mac2/a1/out[15] (adder_2)                 0.00       0.90 f
+  mod3/datapath/mac2/mux1/in2[15] (mux_2)                 0.00       0.90 f
+  mod3/datapath/mac2/mux1/U4/Z (MUX2_X1)                  0.07       0.97 f
+  mod3/datapath/mac2/mux1/out[15] (mux_2)                 0.00       0.97 f
+  mod3/datapath/mac2/f1/in[15] (ff_3)                     0.00       0.97 f
+  mod3/datapath/mac2/f1/U38/ZN (AOI22_X1)                 0.05       1.02 r
+  mod3/datapath/mac2/f1/U39/ZN (INV_X1)                   0.02       1.04 f
+  mod3/datapath/mac2/f1/out_reg[15]/D (DFF_X1)            0.01       1.05 f
+  data arrival time                                                  1.05
+
+  clock clk (rise edge)                                   1.09       1.09
+  clock network delay (ideal)                             0.00       1.09
+  mod3/datapath/mac2/f1/out_reg[15]/CK (DFF_X1)           0.00       1.09 r
+  library setup time                                     -0.04       1.05
+  data required time                                                 1.05
+  --------------------------------------------------------------------------
+  data required time                                                 1.05
+  data arrival time                                                 -1.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/rreddy/ese507kreddy/3_proj3/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 16 nets to module mult_0 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_9 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 3 nets to module mvm_datapath_layer1_8_4_2_16 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_8 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_7 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_6 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_5 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 36 nets to module mvm_datapath_layer2_12_8_4_16 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_4 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 16 nets to module mult_1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 11 nets to module mvm_datapath_layer3_16_12_4_16 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+quit
+
+Thank you...
